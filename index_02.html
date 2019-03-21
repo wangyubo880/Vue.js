@@ -1,0 +1,30 @@
+//挂载点，模版与实例
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue入门</title>
+	<script src="./vue.js"></script>  <!-- 引用文件放在head标签，而不是body标签，避免出现抖屏 -->
+</head>
+<body>
+	<!-- 挂载点，模板，实例之间的关系 -->
+	<div id="root">
+	<!-- {{msg}} -->
+	<!-- <h1>hello{{msg}}</h1> -->  <!-- 挂载点内部的内容：模板内容 ，可以写在挂载点内部，可以写在实例中template属性中-->
+	</div>  <!-- 这个div标签是Vue实例的挂载点(Vue实例中el属性对应的DOM节点),Vue只处理挂载点下面的内容 -->
+    <!-- 创建vue实例 -->
+    <!-- 实例：指定挂载点，设置模板，Vue自动结合模板与数据生成最终要展示的内容，然后将内容放在挂载点之中 -->
+	<script>
+		new Vue({
+			el:"#root",   <!--el Vue和哪一个DOM元素绑定-->
+			template:'<h1>hello!{{msg}}</h1>',  <!--template模板 -->
+			data:{
+				msg:"hello world"
+			}
+		})
+		//var dom = document.getElementById("root")
+		//dom.innerHTML = "hello world"
+	</script>
+
+</body>
+</html>

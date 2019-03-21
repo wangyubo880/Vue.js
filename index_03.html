@@ -1,0 +1,38 @@
+<!-- Vue实例中的数据，事件和方法 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue入门</title>
+	<script src="./vue.js"></script>  
+</head>
+<body>
+	<div id="root">
+	<!-- <h1>{{number}}</h1> --> <!-- 插值表达式 -->
+	<!-- <h1 v-text="number"></h1> -->  <!-- h1的内容有number指定 -->
+	<!-- <h1 v-html="number"></h1> -->
+	<!-- <div v-text="content"></div> -->  <!-- 会进行转义 -->
+	<!-- <div v-html="content"></div> -->   <!-- 给模板上的标签绑定事件 -->
+	<div v-on:click="handleClick">{{content}}</div>  <!-- 给元素绑定事件 -->
+	<div @click="handleClick">{{content}}</div>  <!-- 'v-on:'简写'@' -->
+	</div>  
+	<script>
+		new Vue({
+			el:"#root",
+			data:{
+				msg:"hello world",
+				// number: 123
+				// content:"<h1>hello</h1>"
+				content:"hello"
+			},
+			methods:{
+				handleClick:function(){
+					this.content = 'world'  <!-- Vue实例DATA下的content变量 -->
+				}
+			}
+		})
+		
+	</script>
+
+</body>
+</html>

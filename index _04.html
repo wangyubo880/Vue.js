@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>属性绑定和双向数据绑定</title>
+	<script src="./vue.js"></script>
+</head>
+<body>
+	<div id="root">
+		<div v-bind:title="'dell li'+title">hello word</div>  <!-- title和"title"的数据项绑定，使用模板指令v-bind，等号后面就不是字符串了，而是data中的title  属性绑定-->
+		<div :title="'dell l;i'+title">hello word</div>  <!-- 'v-bind:'可以用':'表示 -->
+		<input :value="content"/>
+		<input v-model="content"/> <!--  使用v-model完成数据的双向绑定 -->
+		<div>{{content}}</div>
+	</div>
+	<script>
+		new Vue({
+			el:"#root",
+			data:{
+				title:"this is hello world",
+				content:"this is content"
+			}
+		})
+	</script>
+</body>
+</html>

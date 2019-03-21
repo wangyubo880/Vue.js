@@ -1,0 +1,24 @@
+//Vue.js如何引入到代码中
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue入门</title>
+	<script src="./vue.js"></script>  <!-- 引用文件放在head标签，而不是body标签，避免出现抖屏 -->
+</head>
+<body>
+	<div id="root">{{msg}}</div>
+    <!-- 创建vue实例 -->
+	<script>
+		new Vue({
+			el:"#root",   <!--el Vue和哪一个DOM元素绑定-->
+			data:{
+				msg:"hello world"
+			}
+		})
+		//var dom = document.getElementById("root")
+		//dom.innerHTML = "hello world"
+	</script>
+
+</body>
+</html>
